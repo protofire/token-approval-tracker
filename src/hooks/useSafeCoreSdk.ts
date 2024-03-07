@@ -20,7 +20,9 @@ export const useSafeServiceClient = () => {
       signerOrProvider: signer,
     });
 
-    const txServiceUrl = networkInfo.get(safe.chainId)?.baseAPI;
+    const networkConfig = networkInfo.get(safe.chainId);
+    const txServiceUrl =
+      process.env.REACT_APP_IS_PRODUCTION === 'true' ? networkConfig?.baseAPI : networkConfig?.stagingBaseAPI;
 
     if (txServiceUrl) {
       setSafeServiceClient(

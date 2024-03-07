@@ -4,6 +4,7 @@ type NetworkInfo = {
   name: string;
   currencySymbol: string;
   baseAPI?: string;
+  stagingBaseAPI?: string;
 };
 
 export const networkInfo = new Map<number, NetworkInfo>([
