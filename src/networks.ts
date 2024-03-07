@@ -88,4 +88,15 @@ export const networkInfo = new Map<number, NetworkInfo>([
       baseAPI: 'https://safe-transaction-avalanche.safe.global',
     },
   ],
+  [
+    245022934,
+    {
+      chainID: 245022934,
+      name: 'Neon EVM MainNet',
+      shortName: 'neonevm-mainnet',
+      currencySymbol: 'NEON',
+      baseAPI: 'https://transaction.safe.neonevm.org',
+      stagingBaseAPI: 'https://transaction.staging.safe.neonevm.org',
+    },
+  ],
 ]);
