@@ -99,4 +99,34 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction.staging.safe.neonevm.org',
     },
   ],
+  [
+    1284,
+    {
+      chainID: 1284,
+      name: 'Moonbeam',
+      shortName: 'moon',
+      currencySymbol: 'GLMR',
+      baseAPI: 'https://transaction.staging.multisig.moonbeam.network',
+    },
+  ],
+  [
+    1285,
+    {
+      chainID: 1285,
+      name: 'Moonriver',
+      shortName: 'moon',
+      currencySymbol: 'MOVR',
+      baseAPI: 'https://transaction.moonriver.staging.multisig.moonbeam.network',
+    },
+  ],
+  [
+    1287,
+    {
+      chainID: 1287,
+      name: 'Moonbase',
+      shortName: 'moon',
+      currencySymbol: 'DEV',
+      baseAPI: 'https://transaction.moonbase.staging.multisig.moonbeam.network',
+    },
+  ],
 ]);
