@@ -3,7 +3,7 @@ import React from 'react';
 
 import { AppHeader } from './components/AppHeader';
 import { ApprovalLoader } from './components/ApprovalLoader';
-import { Footer } from './components/Footer';
+// import { Footer } from './components/Footer';
 import { ApprovalList } from './components/approvallist/ApprovalList';
 import { FAQSection } from './components/approvallist/FAQSection';
 import { StoreContextProvider } from './stores/StoreContextProvider';
@@ -43,7 +43,7 @@ const SafeApp = (): React.ReactElement => {
           </StoreContextProvider>
         </Card>
         <FAQSection />
-        <Footer />
+        {/* <Footer /> */}
       </Box>
     </Box>
   );
