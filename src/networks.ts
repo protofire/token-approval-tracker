@@ -107,6 +107,7 @@ export const networkInfo = new Map<number, NetworkInfo>([
       shortName: 'moon',
       currencySymbol: 'GLMR',
       baseAPI: 'https://transaction.staging.multisig.moonbeam.network',
+      stagingBaseAPI: 'https://transaction.staging.multisig.moonbeam.network',
     },
   ],
   [
@@ -117,6 +118,7 @@ export const networkInfo = new Map<number, NetworkInfo>([
       shortName: 'moon',
       currencySymbol: 'MOVR',
       baseAPI: 'https://transaction.moonriver.staging.multisig.moonbeam.network',
+      stagingBaseAPI: 'https://transaction.moonriver.staging.multisig.moonbeam.network',
     },
   ],
   [
@@ -127,6 +129,7 @@ export const networkInfo = new Map<number, NetworkInfo>([
       shortName: 'moon',
       currencySymbol: 'DEV',
       baseAPI: 'https://transaction.moonbase.staging.multisig.moonbeam.network',
+      stagingBaseAPI: 'https://transaction.moonbase.staging.multisig.moonbeam.network',
     },
   ],
 ]);
