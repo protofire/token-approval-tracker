@@ -11,7 +11,6 @@ type TransactionLog = ethers.providers.Log & {
   tokenAddress: string;
   txHash: string;
 };
-
 export const fetchApprovalsOnChain: (
   safeAddress: string,
   safeAppProvider: SafeAppProvider,
@@ -21,7 +20,8 @@ export const fetchApprovalsOnChain: (
     .getLogs({
       fromBlock: 0,
       toBlock: 'latest',
-      topics: [ethers.utils.id('Approval(address,address,uint256)'), hexZeroPad(safeAddress, 32)],
+      address: safeAddress,
+      topics: [ethers.utils.id('Approval(address,address,uint256)')],
     })
     // We filter out mismatching Approval events like ERC721 approvals
     .then((logs) => {
