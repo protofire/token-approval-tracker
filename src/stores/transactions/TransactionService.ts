@@ -41,7 +41,8 @@ export const fetchApprovalsOnChain: (safeAddress: string, chainId: number) => Pr
     chainId: BigInt(chainId),
     txServiceUrl: `${txServiceUrl}/api`,
   });
-  const allTransactions = (await safeApiKit.getAllTransactions(safeAddress)).results;
+  const allTransactions = (await safeApiKit.getAllTransactions(safeAddress, { limit: Number.MAX_SAFE_INTEGER }))
+    .results;
   const approvalTransactions = filterApprovals(allTransactions as Transaction[]);
   return approvalTransactions;
 };
@@ -97,6 +98,6 @@ export const fetchApprovalTransactions = async (
       console.info(`Skipping unparsable approval event. ${tokenEntry[0]} is most likely not an ERC20 contract.`);
     }
   }
-  debugger;
+
   return result;
 };
