@@ -1,65 +1,78 @@
+import SafeApiKit, {
+  EthereumTxWithTransfersResponse,
+  SafeModuleTransactionWithTransfersResponse,
+  SafeMultisigTransactionWithTransfersResponse,
+} from '@safe-global/api-kit';
 import { SafeAppProvider } from '@safe-global/safe-apps-provider';
-import { ethers } from 'ethers';
-import { hexZeroPad } from 'ethers/lib/utils';
 
 import { getAllowance } from '../../actions/allowance';
+import { networkInfo } from '../../networks';
 import { reduceToMap } from '../../utils/arrayReducers';
 
 import { AccumulatedApproval } from './TransactionStore';
 
-type TransactionLog = ethers.providers.Log & {
-  tokenAddress: string;
-  txHash: string;
+type Transaction = SafeModuleTransactionWithTransfersResponse &
+  SafeMultisigTransactionWithTransfersResponse &
+  EthereumTxWithTransfersResponse & {
+    dataDecoded?: {
+      method: string;
+      parameters: {
+        name: string;
+        type: string;
+        value: string;
+      };
+    };
+  };
+
+const filterApprovals = (transactions: Transaction[]): Transaction[] => {
+  return transactions.filter((tx) => {
+    return tx?.txType === 'MULTISIG_TRANSACTION' && tx?.dataDecoded?.method === 'approve' && tx?.isSuccessful;
+  });
 };
 
-export const fetchApprovalsOnChain: (
-  safeAddress: string,
-  safeAppProvider: SafeAppProvider,
-) => Promise<TransactionLog[]> = async (safeAddress, safeAppProvider) => {
-  const web3Provider = new ethers.providers.Web3Provider(safeAppProvider);
-  const approvalLogs = await web3Provider
-    .getLogs({
-      fromBlock: 0,
-      toBlock: 'latest',
-      topics: [ethers.utils.id('Approval(address,address,uint256)'), hexZeroPad(safeAddress, 32)],
-    })
-    // We filter out mismatching Approval events like ERC721 approvals
-    .then((logs) => {
-      return logs.filter((log) => log.topics.length === 3);
-    })
-    .then((logs) =>
-      logs.map((log) => ({
-        ...log,
-        tokenAddress: log.address,
-        txHash: log.transactionHash,
-      })),
-    );
-
-  return approvalLogs;
+export const fetchApprovalsOnChain: (safeAddress: string, chainId: number) => Promise<Transaction[]> = async (
+  safeAddress,
+  chainId,
+) => {
+  const networkConfig = networkInfo.get(chainId);
+  const txServiceUrl =
+    process.env.REACT_APP_IS_PRODUCTION === 'true' ? networkConfig?.baseAPI : networkConfig?.stagingBaseAPI;
+  const safeApiKit = new SafeApiKit({
+    chainId: BigInt(chainId),
+    txServiceUrl: `${txServiceUrl}/api`,
+  });
+  const allTransactions = (await safeApiKit.getAllTransactions(safeAddress)).results;
+  const approvalTransactions = filterApprovals(allTransactions as Transaction[]);
+  return approvalTransactions;
 };
 
 /**
  * Fetches all approval txs for a safeAddress and network.
  *
  * @param safeAddress address of the connected safe
+ * @param chainId chainId of the connected network
  * @param safeAppProvider web3 provider
  * @returns approve transactions grouped by token and spender address containing the remaining allowance
  */
-export const fetchApprovalTransactions = async (safeAddress: string, safeAppProvider: SafeAppProvider) => {
-  const transactionsByToken = await fetchApprovalsOnChain(safeAddress, safeAppProvider)
+export const fetchApprovalTransactions = async (
+  safeAddress: string,
+  chainId: number,
+  safeAppProvider: SafeAppProvider,
+) => {
+  const transactionsByToken = await fetchApprovalsOnChain(safeAddress, chainId)
     .then((transactions) =>
       transactions.sort((a, b) => {
-        const blockDiff = b.blockNumber - a.blockNumber;
+        const blockDiff = (b.blockNumber ?? 0) - (a.blockNumber ?? 0);
         if (blockDiff !== 0) {
           return blockDiff;
         }
-        return b.logIndex - a.logIndex;
+        return new Date(b.submissionDate).valueOf() - new Date(a.submissionDate).valueOf();
       }),
     )
-    .then((transactions) => reduceToMap(transactions, (obj) => obj.tokenAddress))
+    .then((transactions) => reduceToMap(transactions, (obj) => obj.to)) // get token addresses
     .catch((reason) => {
       console.error(`Error while fetching approval transactions: ${reason}`);
-      return new Map<string, TransactionLog[]>();
+      return new Map<string, Transaction[]>();
     });
 
   const result: AccumulatedApproval[] = [];
@@ -67,7 +80,7 @@ export const fetchApprovalTransactions = async (safeAddress: string, safeAppProv
     try {
       const transactions = tokenEntry[1];
       const transactionsBySpender = reduceToMap(transactions, (tx) => {
-        return `0x${tx.topics[2].slice(26)}`;
+        return tx.dataDecoded?.parameters[0].value;
       });
 
       for (const spenderEntry of transactionsBySpender.entries()) {
@@ -84,5 +97,6 @@ export const fetchApprovalTransactions = async (safeAddress: string, safeAppProv
       console.info(`Skipping unparsable approval event. ${tokenEntry[0]} is most likely not an ERC20 contract.`);
     }
   }
+  debugger;
   return result;
 };
