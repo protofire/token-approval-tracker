@@ -1,0 +1,25 @@
+diff --git a/node_modules/@safe-global/api-kit/dist/src/SafeApiKit.js b/node_modules/@safe-global/api-kit/dist/src/SafeApiKit.js
+index 6c22a30..cf75cb0 100644
+--- a/node_modules/@safe-global/api-kit/dist/src/SafeApiKit.js
++++ b/node_modules/@safe-global/api-kit/dist/src/SafeApiKit.js
+@@ -464,6 +464,8 @@ class SafeApiKit {
+         url.searchParams.set('queued', queued);
+         const executed = options?.executed?.toString() || 'false';
+         url.searchParams.set('executed', executed);
++        const limit = options?.limit?.toString() || 10;
++        url.searchParams.set('limit', limit);
+         return (0, httpRequests_1.sendRequest)({
+             url: url.toString(),
+             method: httpRequests_1.HttpMethod.Get
+diff --git a/node_modules/@safe-global/api-kit/dist/src/types/safeTransactionServiceTypes.d.ts b/node_modules/@safe-global/api-kit/dist/src/types/safeTransactionServiceTypes.d.ts
+index 61e4c25..e71af8f 100644
+--- a/node_modules/@safe-global/api-kit/dist/src/types/safeTransactionServiceTypes.d.ts
++++ b/node_modules/@safe-global/api-kit/dist/src/types/safeTransactionServiceTypes.d.ts
+@@ -195,6 +195,7 @@ export type AllTransactionsOptions = {
+     executed?: boolean;
+     queued?: boolean;
+     trusted?: boolean;
++    limit?: number;
+ };
+ export type AllTransactionsListResponse = {
+     readonly count: number;
