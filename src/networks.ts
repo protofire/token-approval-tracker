@@ -132,4 +132,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction.moonbase.staging.multisig.moonbeam.network',
     },
   ],
+  [
+    9000,
+    {
+      chainID: 9000,
+      name: 'Evmos testnet',
+      shortName: 'evmostestnet',
+      currencySymbol: 'tEVMOS',
+      baseAPI: 'https://transaction-testnet.safe.evmos.dev',
+      stagingBaseAPI: 'https://transaction-testnet.safe.evmos.dev',
+    },
+  ],
+  [
+    9001,
+    {
+      chainID: 9001,
+      name: 'Evmos',
+      shortName: 'evmos',
+      currencySymbol: 'EVMOS',
+      baseAPI: 'https://transaction.safe.evmos.dev',
+      stagingBaseAPI: 'https://transaction.safe.evmos.dev',
+    },
+  ],
 ]);
