@@ -9,6 +9,7 @@
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.15",
     "@mui/x-data-grid": "^4.X.X",
+    "@safe-global/api-kit": "^2.3.1",
     "@safe-global/safe-apps-provider": "^0.18.0",
     "@safe-global/safe-apps-react-sdk": "^4.7.0",
     "@safe-global/safe-apps-sdk": "^8.1.0",
@@ -21,6 +22,8 @@
     "ethers": "^5.6.6",
     "mobx": "^6.5.0",
     "mobx-react": "^7.3.0",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2"
@@ -33,7 +36,7 @@
     "test": "craco test",
     "eject": "craco eject",
     "generate-types": "typechain --target=ethers-v5 --out-dir src/contracts './node_modules/@openzeppelin/contracts/build/contracts/ERC20.json'",
-    "postinstall": "yarn generate-types",
+    "postinstall": "yarn patch-package && yarn generate-types",
     "serve": "npx -y serve build -p 3001"
   },
   "browserslist": {

@@ -22,7 +22,7 @@ describe('TransactionStore', () => {
       approvalLogs: [],
     });
 
-    expect(fetchApprovalTransactions(safeAddress, safeProvider)).resolves.toHaveLength(0);
+    expect(fetchApprovalTransactions(safeAddress, 1, safeProvider)).resolves.toHaveLength(0);
   });
 
   /**
@@ -45,7 +45,7 @@ describe('TransactionStore', () => {
       ],
     });
 
-    const approvalsTxs = await fetchApprovalTransactions(safeAddress, safeProvider);
+    const approvalsTxs = await fetchApprovalTransactions(safeAddress, 1, safeProvider);
 
     expect(approvalsTxs).toHaveLength(1);
     expect(approvalsTxs[0].allowance).toBe(toWei(42, 18).toFixed());
@@ -77,7 +77,7 @@ describe('TransactionStore', () => {
       ],
     });
 
-    const approvalsTxs = await fetchApprovalTransactions(safeAddress, safeProvider);
+    const approvalsTxs = await fetchApprovalTransactions(safeAddress, 1, safeProvider);
 
     expect(approvalsTxs).toHaveLength(1);
     expect(approvalsTxs[0].allowance).toBe(toWei(42, 18).toFixed());
@@ -109,7 +109,7 @@ describe('TransactionStore', () => {
       ],
     });
 
-    const approvalsTxs = await fetchApprovalTransactions(safeAddress, safeProvider);
+    const approvalsTxs = await fetchApprovalTransactions(safeAddress, 1, safeProvider);
 
     expect(approvalsTxs).toHaveLength(1);
     // First approval is for tokenAddress2 because of highest blockNumber and logIndex
@@ -126,7 +126,7 @@ describe('TransactionStore', () => {
       logReturnType: 'bugReportLog',
     });
 
-    const approvals = await fetchApprovalTransactions(safeAddress, safeProvider);
+    const approvals = await fetchApprovalTransactions(safeAddress, 1, safeProvider);
     expect(approvals).toHaveLength(12);
   });
 });
