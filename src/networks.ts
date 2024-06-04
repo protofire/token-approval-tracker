@@ -154,4 +154,37 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction.safe.evmos.dev',
     },
   ],
+  [
+    59140,
+    {
+      chainID: 59140,
+      name: 'Linea Goerli',
+      shortName: 'linea-goerli',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction-testnet.safe.linea.build',
+      stagingBaseAPI: 'https://transaction-testnet.staging.safe.linea.build',
+    },
+  ],
+  [
+    59141,
+    {
+      chainID: 59141,
+      name: 'Linea Sepolia',
+      shortName: 'linea-sepolia',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction-sepolia.safe.linea.build',
+      stagingBaseAPI: 'https://transaction-sepolia.staging.safe.linea.build',
+    },
+  ],
+  [
+    59144,
+    {
+      chainID: 59144,
+      name: 'Linea',
+      shortName: 'linea',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction.safe.linea.build',
+      stagingBaseAPI: 'https://transaction.staging.safe.linea.build',
+    },
+  ],
 ]);
