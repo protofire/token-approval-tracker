@@ -242,4 +242,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-sepolia.staging.multisig.mantle.xyz',
     },
   ],
+  [
+    1666600000,
+    {
+      chainID: 1666600000,
+      name: 'Harmony',
+      shortName: 'hmy',
+      currencySymbol: 'ONE',
+      baseAPI: 'https://transaction.multisig.harmony.one',
+      stagingBaseAPI: 'https://transaction.staging-safe.harmony.one',
+    },
+  ],
+  [
+    1666700000,
+    {
+      chainID: 1666700000,
+      name: 'Harmony Testnet',
+      shortName: 'hmyt',
+      currencySymbol: 'ONE',
+      baseAPI: 'https://transaction-testnet.multisig.harmony.one',
+      stagingBaseAPI: 'https://transaction-testnet.staging-safe.harmony.one',
+    },
+  ],
 ]);
