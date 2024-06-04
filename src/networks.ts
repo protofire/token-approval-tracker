@@ -209,4 +209,37 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-testnet.safe.stg.oasis.io',
     },
   ],
+  [
+    5000,
+    {
+      chainID: 5000,
+      name: 'Mantle',
+      shortName: 'mantle',
+      currencySymbol: 'MNT',
+      baseAPI: 'https://transaction.multisig.mantle.xyz',
+      stagingBaseAPI: 'https://transaction.staging.multisig.mantle.xyz',
+    },
+  ],
+  [
+    5001,
+    {
+      chainID: 5001,
+      name: 'Mantle Testnet',
+      shortName: 'mantle-testnet',
+      currencySymbol: 'MNT',
+      baseAPI: 'https://transaction-testnet.multisig.mantle.xyz',
+      stagingBaseAPI: 'https://transaction-testnet.staging.multisig.mantle.xyz',
+    },
+  ],
+  [
+    5003,
+    {
+      chainID: 5003,
+      name: 'Mantle Sepolia Testnet',
+      shortName: 'mnt-sep',
+      currencySymbol: 'MNT',
+      baseAPI: 'https://transaction-sepolia.multisig.mantle.xyz',
+      stagingBaseAPI: 'https://transaction-sepolia.staging.multisig.mantle.xyz',
+    },
+  ],
 ]);
