@@ -187,4 +187,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction.staging.safe.linea.build',
     },
   ],
+  [
+    23294,
+    {
+      chainID: 23294,
+      name: 'Oasis Sapphire',
+      shortName: 'sapphire',
+      currencySymbol: 'ROSE',
+      baseAPI: 'https://transaction.safe.oasis.io',
+      stagingBaseAPI: 'https://transaction.safe.stg.oasis.io',
+    },
+  ],
+  [
+    23295,
+    {
+      chainID: 23295,
+      name: 'Oasis Sapphire Testnet',
+      shortName: 'sapphire-testnet',
+      currencySymbol: 'TEST',
+      baseAPI: 'https://transaction-testnet.safe.oasis.io',
+      stagingBaseAPI: 'https://transaction-testnet.safe.stg.oasis.io',
+    },
+  ],
 ]);
