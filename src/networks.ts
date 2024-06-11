@@ -264,4 +264,15 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-testnet.staging-safe.harmony.one',
     },
   ],
+  [
+    17000,
+    {
+      chainID: 17000,
+      name: 'Holesky',
+      shortName: 'holesky',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction-holesky.holesky-safe.protofire.io',
+      stagingBaseAPI: 'https://transaction-holesky.stg.holesky-safe.protofire.io',
+    },
+  ],
 ]);
