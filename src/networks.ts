@@ -106,8 +106,8 @@ export const networkInfo = new Map<number, NetworkInfo>([
       name: 'Moonbeam',
       shortName: 'moon',
       currencySymbol: 'GLMR',
+      stagingBaseAPI: 'https://transaction.staging.multisig.moonbeam.network',
       baseAPI: 'https://transaction.multisig.moonbeam.network',
-      stagingBaseAPI: 'https://transaction.multisig.moonbeam.network',
     },
   ],
   [
@@ -117,8 +117,8 @@ export const networkInfo = new Map<number, NetworkInfo>([
       name: 'Moonriver',
       shortName: 'moon',
       currencySymbol: 'MOVR',
+      stagingBaseAPI: 'https://transaction.moonriver.staging.multisig.moonbeam.network',
       baseAPI: 'https://transaction.moonriver.multisig.moonbeam.network',
-      stagingBaseAPI: 'https://transaction.moonriver.multisig.moonbeam.network',
     },
   ],
   [
@@ -128,8 +128,8 @@ export const networkInfo = new Map<number, NetworkInfo>([
       name: 'Moonbase',
       shortName: 'moon',
       currencySymbol: 'DEV',
+      stagingBaseAPI: 'https://transaction.moonbase.staging.multisig.moonbeam.network',
       baseAPI: 'https://transaction.moonbase.multisig.moonbeam.network',
-      stagingBaseAPI: 'https://transaction.moonbase.multisig.moonbeam.network',
     },
   ],
   [
@@ -273,6 +273,61 @@ export const networkInfo = new Map<number, NetworkInfo>([
       currencySymbol: 'ETH',
       baseAPI: 'https://transaction-holesky.holesky-safe.protofire.io',
       stagingBaseAPI: 'https://transaction-holesky.stg.holesky-safe.protofire.io',
+    },
+  ],
+  [
+    592,
+    {
+      chainID: 592,
+      name: 'Astar',
+      shortName: 'astar',
+      currencySymbol: 'ASTR',
+      baseAPI: 'https://transaction.safe.astar.network',
+      stagingBaseAPI: 'https://transaction.staging-safe.astar.network',
+    },
+  ],
+  [
+    336,
+    {
+      chainID: 336,
+      name: 'Shiden',
+      shortName: 'shiden',
+      currencySymbol: 'SDN',
+      baseAPI: 'https://transaction-shiden.safe.astar.network',
+      stagingBaseAPI: 'https://transaction-shiden.staging-safe.astar.network',
+    },
+  ],
+  [
+    6038361,
+    {
+      chainID: 6038361,
+      name: 'Astar zKyoto',
+      shortName: 'zKyoto',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction-zkyoto.safe.astar.network',
+      stagingBaseAPI: 'https://transaction-zkyoto.staging-safe.astar.network',
+    },
+  ],
+  [
+    81,
+    {
+      chainID: 81,
+      name: 'Shibuya',
+      shortName: 'shibuya',
+      currencySymbol: 'SBY',
+      baseAPI: 'https://transaction-shibuya.safe.astar.network',
+      stagingBaseAPI: 'https://transaction-shibuya.staging-safe.astar.network',
+    },
+  ],
+  [
+    3776,
+    {
+      chainID: 3776,
+      name: 'zkEVM',
+      shortName: 'zkEVM',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction-zkevm.safe.astar.network',
+      stagingBaseAPI: 'https://transaction-zkevm.staging-safe.astar.network',
     },
   ],
 ]);
