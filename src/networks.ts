@@ -373,5 +373,5 @@ export const networkInfo = new Map<number, NetworkInfo>([
       baseAPI: 'https://transaction-cartio.staging.safe.berachain.com',
       stagingBaseAPI: 'https://transaction-cartio.staging.safe.berachain.com',
     },
-  ]
+  ],
 ]);
