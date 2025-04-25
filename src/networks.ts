@@ -374,4 +374,15 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-cartio.staging.safe.berachain.com',
     },
   ],
+  [
+    245022934,
+    {
+      chainID: 245022934,
+      name: 'Neon EVM Mainnet',
+      shortName: 'neonevm-mainnet',
+      currencySymbol: 'NEON',
+      baseAPI: 'https://transaction.safe.neonevm.org',
+      stagingBaseAPI: 'https://transaction.staging.safe.neonevm.org',
+    },
+  ],
 ]);
