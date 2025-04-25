@@ -330,4 +330,59 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-zkevm.staging-safe.astar.network',
     },
   ],
+  [
+    80094,
+    {
+      chainID: 80094,
+      name: 'Berachain',
+      shortName: 'berachain',
+      currencySymbol: 'BERA',
+      baseAPI: 'https://transaction.safe.berachain.com',
+      stagingBaseAPI: 'https://transaction.staging.safe.berachain.com',
+    },
+  ],
+  [
+    80085,
+    {
+      chainID: 80085,
+      name: 'Berachain Artio',
+      shortName: 'berachainArtio',
+      currencySymbol: 'BERA',
+      baseAPI: 'https://transaction-testnet.safe.berachain.com',
+      stagingBaseAPI: 'https://transaction-testnet.staging.safe.berachain.com',
+    },
+  ],
+  [
+    80084,
+    {
+      chainID: 80084,
+      name: 'Berachain bArtio',
+      shortName: 'berachainbArtio',
+      currencySymbol: 'BERA',
+      baseAPI: 'https://transaction-bartio.safe.berachain.com',
+      stagingBaseAPI: 'https://transaction-bartio.staging.safe.berachain.com',
+    },
+  ],
+  [
+    80000,
+    {
+      chainID: 80000,
+      name: 'Berachain cArtio',
+      shortName: 'cArtio',
+      currencySymbol: 'BERA',
+      baseAPI: 'https://transaction-cartio.staging.safe.berachain.com',
+      stagingBaseAPI: 'https://transaction-cartio.staging.safe.berachain.com',
+    },
+  ],
+  [
+    245022934,
+    {
+      chainID: 245022934,
+      name: 'Neon EVM Mainnet',
+      shortName: 'neonevm-mainnet',
+      currencySymbol: 'NEON',
+      baseAPI: 'https://transaction.safe.neonevm.org',
+      stagingBaseAPI: 'https://transaction.staging.safe.neonevm.org',
+    },
+  ],
 ]);
