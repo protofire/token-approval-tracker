@@ -375,6 +375,17 @@ export const networkInfo = new Map<number, NetworkInfo>([
     },
   ],
   [
+    534351,
+    {
+      chainID: 534351,
+      name: 'Scroll Sepolia',
+      shortName: 'scr-sepolia',
+      currencySymbol: 'ETH',
+      baseAPI: 'https://transaction-sepolia.safe.scroll.xyz',
+      stagingBaseAPI: 'https://transaction-sepolia.staging.safe.scroll.xyz',
+    },
+  ],
+  [
     245022934,
     {
       chainID: 245022934,
