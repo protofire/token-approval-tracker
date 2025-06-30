@@ -385,4 +385,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction.staging.safe.neonevm.org',
     },
   ],
+  [
+    2222,
+    {
+      chainID: 2222,
+      name: 'Kava',
+      shortName: 'kava',
+      currencySymbol: 'KAVA',
+      baseAPI: 'https://transaction.safe.kava.io',
+      stagingBaseAPI: 'https://transaction.staging.safe.kava.io',
+    },
+  ],
+  [
+    2221,
+    {
+      chainID: 2221,
+      name: 'Kava Testnet',
+      shortName: 'tkava',
+      currencySymbol: 'TKAVA',
+      baseAPI: 'https://transaction-testnet.safe.kava.io',
+      stagingBaseAPI: 'https://transaction-testnet.staging.safe.kava.io',
+    },
+  ],
 ]);
