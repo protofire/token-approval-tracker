@@ -434,7 +434,7 @@ export const networkInfo = new Map<number, NetworkInfo>([
     {
       chainID: 37714555429,
       name: 'Xai Testnet Sepolia',
-      shortName: 'Xai-testnet-sepolia',
+      shortName: 'xaitestnet',
       currencySymbol: 'sXAI',
       baseAPI: 'https://transaction-testnet.safe.xai.games',
       stagingBaseAPI: 'https://transaction-testnet.staging.safe.xai.games',
