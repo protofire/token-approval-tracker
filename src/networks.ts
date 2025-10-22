@@ -426,7 +426,7 @@ export const networkInfo = new Map<number, NetworkInfo>([
       shortName: 'xai',
       currencySymbol: 'XAI',
       baseAPI: 'https://transaction.safe.xai.games',
-      stagingBaseAPI: 'https://transaction-testnet.safe.xai.games',
+      stagingBaseAPI: 'https://transaction.staging.safe.xai.games',
     },
   ],
   [
