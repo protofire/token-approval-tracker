@@ -418,4 +418,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-testnet.staging.safe.kava.io',
     },
   ],
+  [
+    660279,
+    {
+      chainID: 660279,
+      name: 'Xai',
+      shortName: 'xai',
+      currencySymbol: 'XAI',
+      baseAPI: 'https://transaction.safe.xai.games',
+      stagingBaseAPI: 'https://transaction.staging.safe.xai.games',
+    },
+  ],
+  [
+    37714555429,
+    {
+      chainID: 37714555429,
+      name: 'Xai Testnet Sepolia',
+      shortName: 'xaitestnet',
+      currencySymbol: 'sXAI',
+      baseAPI: 'https://transaction-testnet.safe.xai.games',
+      stagingBaseAPI: 'https://transaction-testnet.staging.safe.xai.games',
+    },
+  ],
 ]);
