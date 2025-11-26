@@ -331,6 +331,17 @@ export const networkInfo = new Map<number, NetworkInfo>([
     },
   ],
   [
+    80069,
+    {
+      chainID: 80069,
+      name: 'Berachain Bepolia',
+      shortName: 'berachain-bepolia',
+      currencySymbol: 'BERA',
+      baseAPI: 'https://transaction-bepolia.safe.berachain.com',
+      stagingBaseAPI: 'https://transaction-bepolia.staging.safe.berachain.com',
+    },
+  ],
+  [
     80094,
     {
       chainID: 80094,
