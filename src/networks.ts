@@ -451,4 +451,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-testnet.staging.safe.xai.games',
     },
   ],
+  [
+    5064014,
+    {
+      chainID: 5064014,
+      name: 'Ethereal',
+      shortName: 'ethereal',
+      currencySymbol: 'USDe',
+      baseAPI: 'https://transaction.safe.ethereal.trade',
+      stagingBaseAPI: 'https://transaction.safe.etherealtest.net',
+    },
+  ],
+  [
+    13374202,
+    {
+      chainID: 13374202,
+      name: 'Ethereal Testnet',
+      shortName: 'ethereal-testnet-0',
+      currencySymbol: 'USDe',
+      baseAPI: 'https://transaction-testnet.safe.ethereal.trade',
+      stagingBaseAPI: 'https://transaction-testnet.safe.etherealtest.net',
+    },
+  ],
 ]);
