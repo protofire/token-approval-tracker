@@ -473,4 +473,26 @@ export const networkInfo = new Map<number, NetworkInfo>([
       stagingBaseAPI: 'https://transaction-testnet.safe.etherealtest.net',
     },
   ],
+  [
+    8700,
+    {
+      chainID: 8700,
+      name: 'Autonomys Chronos Testnet',
+      shortName: 'ACN',
+      currencySymbol: 'tAI3',
+      baseAPI: 'https://transaction-testnet.safe.autonomys.xyz',
+      stagingBaseAPI: 'https://transaction-testnet.staging.safe.autonomys.xyz',
+    },
+  ],
+  [
+    870,
+    {
+      chainID: 870,
+      name: 'Autonomys Mainnet',
+      shortName: 'amn',
+      currencySymbol: 'AI3',
+      baseAPI: 'https://transaction.safe.autonomys.xyz',
+      stagingBaseAPI: 'https://transaction.staging.safe.autonomys.xyz',
+    },
+  ],
 ]);
